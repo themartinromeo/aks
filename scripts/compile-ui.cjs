@@ -1,0 +1,1 @@
+const fs=require('fs');const assets=Object.fromEntries(['index.html','style.css','app.js','studio.js','three.js'].map(f=>[f,fs.readFileSync('ui/'+f,'utf8')]));const handler=fs.readFileSync('worker/handler.js','utf8');fs.writeFileSync('worker/index.js','const assets='+JSON.stringify(assets)+';\n'+handler);
